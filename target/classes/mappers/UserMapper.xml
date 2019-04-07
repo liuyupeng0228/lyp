@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.user.IUserMapper" >
+
+	<sql id="userWhere">
+		<where>
+			<if test="realname != null and realname != ''">
+				realname like concat('%',#{realname},'%')
+			</if>
+			<if test="minBirthday != null">
+				and birthday >= #{minBirthday}
+			</if>
+			<if test="maxBirthday != null">
+				and birthday &lt;= #{maxBirthday}
+			</if>
+			<if test="minSalary > 0">
+				and salary >= #{minSalary}
+			</if>
+			<if test="maxSalary > 0">
+				and salary &lt;= #{maxSalary}
+			</if>
+			<if test="deptList != null and deptList.size() > 0">
+				and deptId in
+				<foreach collection="deptList" item="deptId" open="(" close=")" separator=",">
+					#{deptId}
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+
+	<!-- 查询总条数 -->
+	<select id="queryCount" parameterType="user" resultType="long">
+		select count(*) from t_user
+		<include refid="userWhere"></include>
+	</select>
+	<!--条件查询-->
+	<select id="queryUserList" parameterType="user" resultType="user">
+		select t.* from
+			(select u.id,u.username,u.realname,u.sex,u.birthday,u.salary,u.userType,d.name deptName from t_user u
+			left join t_dept d on u.deptId = d.id
+				<include refid="userWhere"></include>
+				<if test="sortField != null and sortField != ''">
+					order by ${sortField} ${sort}
+				</if>
+				<if test="sortField == null or sortField == ''">
+					order by id desc
+				</if>
+			) t
+		limit #{startPos},#{pageSize}
+	</select>
+
+    <!--添加用户-->
+    <insert id="addUserInfo" parameterType="user">
+        insert into t_user (username,password,salt,realname,sex,birthday,salary,deptId)
+        values (#{username},#{password},#{salt},#{realname},#{sex},#{birthday},#{salary},#{deptId})
+    </insert>
+
+	<!--删除用户-->
+	<delete id="deleteUser">
+		delete from t_user where id in
+		<foreach collection="list" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!--回显-->
+	<select id="findUserById" parameterType="int" resultType="user">
+		select u.id,u.username,u.realname,u.sex,u.birthday,u.salary,u.userType,u.deptId,d.name deptName from t_user u
+			left join t_dept d on u.deptId = d.id where u.id=#{id};
+	</select>
+	<!--修改-->
+	<update id="updateUser" parameterType="user">
+		update t_user set username=#{username},realname=#{realname},sex=#{sex},birthday=#{birthday},salary=#{salary},deptId=#{deptId}
+		where id=#{id}
+	</update>
+
+	<!--批量修改用户部门-->
+	<update id="updateUserDeptId">
+		update t_user set deptId=#{deptId} where id in
+		<foreach collection="ids" item="idList" open="(" close=")" separator=",">
+			#{idList}
+		</foreach>
+	</update>
+
+	<!--注册用户-->
+	<insert id="addUser" parameterType="user">
+		insert into t_user (username,password,salt) values (#{username},#{password},#{salt})
+	</insert>
+
+	<!--解锁用户-->
+	<update id="updateUserType" parameterType="int">
+		update t_user set userType=0 where id=#{id};
+	</update>
+</mapper>

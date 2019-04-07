@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.log.ILogMapper" >
+	<sql id="logWhere">
+		<where>
+			<if test="userName != null and userName != ''">
+				userName like concat('%'#{userName},'%')
+			</if>
+			<if test="minCreateTime != null">
+				and createTime >= #{minCreateTime}
+			</if>
+			<if test="maxCreateTime != null">
+				and createTime &lt;=#{maxCreateTime}
+			</if>
+		</where>
+	</sql>
+
+
+	<insert id="addLog" parameterType="logInfo">
+		insert into t_log (userName,logInfo,createTime,excuteTime,status,content)
+		values
+		(#{userName},#{logInfo},SYSDATE(),#{excuteTime},#{status},#{content});
+	</insert>
+
+	<select id="queryCount" parameterType="logInfo" resultType="long">
+		select count(*) from t_log
+		<include refid="logWhere"></include>
+	</select>
+
+	<select id="queryLog" parameterType="logInfo" resultType="logInfo">
+		select t.* from
+		(select * from t_log
+			<include refid="logWhere"></include>
+		order by id desc) t
+		limit #{startPos},#{pageSize}
+	</select>
+
+
+
+
+</mapper>

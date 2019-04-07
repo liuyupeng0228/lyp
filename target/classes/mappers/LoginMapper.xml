@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.login.ILoginMapper" >
+	
+	<select id="findUserByUserName" parameterType="string" resultType="user">
+		select * from t_user where username=#{username};
+	</select>
+
+	<select id="findSaltByName" parameterType="string" resultType="string">
+		select salt from t_user where username=#{username};
+	</select>
+
+	<update id="updateUserInfo" parameterType="user">
+		update t_user set firstLoginTime=#{firstLoginTime},lastLoginTime=#{lastLoginTime},loginCount=#{loginCount}
+		where username=#{username};
+	</update>
+
+	<update id="addErrorCount" parameterType="string">
+		update t_user set errorCount = errorCount+1 where username=#{username};
+	</update>
+
+	<update id="updateType" parameterType="string">
+		update t_user set userType = 1 where username=#{username};
+	</update>
+
+	<update id="updateErrorCount" parameterType="string">
+		update t_user set errorCount=0 where username=#{username};
+	</update>
+</mapper>

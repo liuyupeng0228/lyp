@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.product.IProductMapper" >
+
+	<!-- id是唯一标识符，下面SQL语句中的resultMap跟的值要与resultMap标签中的id值一致才可使用 -->
+	<!-- type跟的是实体类的类全称或是别名 -->
+	<!-- column跟的是数据库表字段，property跟的是实体类的属性，要一一对应 -->
+	<resultMap id="productList" type="product">
+		<result column="id" property="id"></result>
+		<result column="productName" property="productName"></result>
+		<result column="productPrice" property="productPrice"></result>
+		<!-- 因product实体类中只是封装了brand的一个实体类，所以要通过brand来获取Brand实体类中的数据 -->
+		<result column="brandName" property="brand.brandName"></result>
+		<result column="brandid" property="brand.id"></result>
+		<result column="imgurl" property="imgurl"></result>
+	</resultMap>
+	
+	<!-- 所有的条件查询的条件都放入<where>标签的<if>标签中，每一个条件都有一个<if>标签 -->
+	<!-- <sql>标签中的id自定义，<include>标签中的refid跟的值要与id中的一致 -->
+	<sql id="productWhere">
+		<where>
+			<if test="productName != null and productName != ''">
+				s.productName like concat('%',#{productName},'%')
+			</if>
+			<if test="minPrice !=null and minPrice >=0">
+				and s.productPrice >= #{minPrice}
+			</if>
+			<if test="maxPrice !=null and maxPrice >=0">
+				and s.productPrice &lt;= #{maxPrice}
+			</if>
+			<if test="minCreateTime != null">
+				and s.createTime >= #{minCreateTime}
+			</if>
+			<if test="maxCreateTime != null">
+				and s.createTime &lt;=#{maxCreateTime}
+			</if>
+			<if test="minUpdateTime != null">
+				and s.updateTime >= #{minUpdateTime}
+			</if>
+			<if test="maxUpdateTime != null">
+				and s.updateTime >= #{maxUpdateTime}
+			</if>
+			<if test="brand.id > 0">
+				and s.brandid = #{brand.id}
+			</if>
+		</where>
+	</sql>
+	
+	<!-- 查询总条数 -->
+	<select id="queryCount" parameterType="product" resultType="long">
+		select count(*) from t_shop s left join t_brand b on s.brandid=b.id
+		<include refid="productWhere"></include>
+	</select>
+	<!-- 分页条件查询 -->
+	<select id="queryProduct" parameterType="product" resultMap="productList">
+		select t.* from 
+			(select s.id,s.productName,s.productPrice,s.createTime,s.updateTime,s.brandid,b.brandName,s.imgurl
+			from t_shop s left join t_brand b on s.brandid=b.id
+			<include refid="productWhere"></include> 
+			<if test="sortField != null and sortField != ''">
+				order by ${sortField} ${sort}
+			</if>
+			<if test="sortField == null or sortField == ''">
+				order by id desc
+			</if>
+			) t 
+				limit #{startPos},#{pageSize}
+	</select>
+
+	<!--接口查询-->
+	<select id="findProductApiList" resultMap="productList">
+		select id,productName,productPrice from t_shop;
+	</select>
+
+	<!--Excel导出-->
+	<select id="findProductList" parameterType="product" resultMap="productList">
+		select s.id,s.productName,s.productPrice,s.createTime,s.updateTime,b.brandName,s.imgurl
+		from t_shop s left join t_brand b on s.brandid=b.id
+		<include refid="productWhere"></include>
+	</select>
+
+	<!--查询不同品牌的产品数量-->
+	<select id="queryTotal" parameterType="int" resultType="long">
+		select count(*) from t_shop where brandid=#{id}
+	</select>
+	<!--查询不同品牌的商品-->
+	<select id="findProductListByBrand" parameterType="int" resultMap="productList">
+		select s.id,s.productName,s.productPrice,s.createTime,s.updateTime,b.brandName,s.imgurl
+		from t_shop s left join t_brand b on s.brandid=b.id where brandid = #{id}
+	</select>
+
+	<!--法一-->
+	<!--useGeneratedKeys="true" keyProperty="id" :对增加方法进行id的返回-->
+	<!--<insert id="addProduct" parameterType="product" useGeneratedKeys="true" keyProperty="id">
+		insert into t_shop (productName,productPrice,createTime,brandid,imgurl) values (#{productName},#{productPrice},SYSDATE(),#{brand.id},#{imgurl});
+	</insert>-->
+
+	<!--法二-->
+	<!--使用<selectKey>-->
+	<insert id="addProduct" parameterType="product">
+		<!--使用<selectKey>可以使mybatis的添加成功后自动有特定属性的返回值-->
+		<selectKey resultType="int" keyProperty="id" order="AFTER">
+			/*获取最后添加成功后的数据的id*/
+			select last_insert_id();
+		</selectKey>
+		insert into t_shop (productName,productPrice,createTime,brandid,imgurl) values (#{productName},#{productPrice},SYSDATE(),#{brand.id},#{imgurl});
+	</insert>
+
+	
+	<!-- 单个删除 -->
+	<delete id="deleteProduct" parameterType="int">
+		delete from t_shop where id=#{id};
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatchProduct">
+		delete from t_shop where id in
+			<foreach collection="list" item="id" open="(" close=")" separator=",">
+				#{id}
+			</foreach>
+	</delete>
+	
+
+	<select id="queryById" parameterType="int" resultMap="productList">
+		select id,productName,productPrice,brandid,imgurl from t_shop  where id=#{id};
+	</select>
+	
+	<update id="updateProduct" parameterType="product">
+		update t_shop set productName=#{productName},productPrice=#{productPrice},updateTime=SYSDATE(),brandid=#{brand.id},imgurl=#{imgurl} where id=#{id};
+	</update>
+
+</mapper>

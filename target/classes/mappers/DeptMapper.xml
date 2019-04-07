@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.dept.IDeptMapper" >
+
+	<select id="queryDeptList" resultType="dept">
+		select id,name,pId,remark from t_dept;
+	</select>
+
+	<insert id="addDeptInfo" parameterType="dept">
+		<!--使用<selectKey>可以使mybatis的添加成功后自动有特定属性的返回值-->
+		<selectKey resultType="int" keyProperty="id" order="AFTER">
+			/*获取最后添加成功后的数据的id*/
+			select last_insert_id();
+		</selectKey>
+		insert into t_dept (name,pId,remark) values (#{name},#{pId},#{remark});
+	</insert>
+
+	<update id="updateDeptInfo" parameterType="dept">
+		update t_dept set name=#{name},remark=#{remark} where id=#{id};
+	</update>
+
+	<delete id="deleteDpt">
+		delete from t_dept where id in 
+		<foreach collection="list" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+
+	<select id="findChildByChildId" resultType="dept">
+		select id,name,pId,remark from t_dept where id in
+		<foreach collection="list" item="id" close="(" open=")" separator=",">
+			#{id}
+		</foreach>
+	</select>
+</mapper>

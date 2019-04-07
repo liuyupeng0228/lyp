@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.images.IImagesMapper" >
+
+	<insert id="addImages" parameterType="images">
+		insert into t_images (imagePath,productId) values (#{imagePath},#{productId});
+	</insert>
+
+	<select id="findProductImages" parameterType="int" resultType="images">
+		select id,imagePath from t_images where productId=#{id}
+	</select>
+
+	<delete id="deleteImages" parameterType="string">
+		delete from t_images where imagePath=#{s}
+	</delete>
+
+
+	<!--批量查询，删除-->
+	<select id="findImagesPath" parameterType="list" resultType="images">
+		select id,imagePath from t_images where id in
+		<foreach collection="list" item="idList" open="(" close=")" separator=",">
+			#{idList}
+		</foreach>
+	</select>
+
+	<delete id="deleteImagesById" parameterType="list">
+		delete from t_images where id in
+		<foreach collection="list" item="idList" open="(" close=")" separator=",">
+			#{idList}
+		</foreach>
+	</delete>
+
+	<!--至于数据库交互一次的批量添加-->
+	<insert id="addBatchImages" parameterType="list">
+		insert into t_images (imagePath,productId) values
+		<foreach collection="list" item="images" separator=",">
+			(#{images.imagePath},#{images.productId})
+		</foreach>
+	</insert>
+</mapper>

@@ -1,0 +1,183 @@
+2019-04-04 12:56:20  [ http-nio-8084-exec-7:61484 ] - [ INFO ]  FrameworkServlet 'fhServlet': initialization started
+2019-04-04 12:56:20  [ http-nio-8084-exec-7:61516 ] - [ INFO ]  Refreshing WebApplicationContext for namespace 'fhServlet-servlet': startup date [Thu Apr 04 12:56:20 CST 2019]; parent: Root WebApplicationContext
+2019-04-04 12:56:20  [ http-nio-8084-exec-7:61517 ] - [ INFO ]  Loading XML bean definitions from class path resource [spring/spring-mvc-controller.xml]
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:69817 ] - [ INFO ]  Mapped URL path [/commons/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70387 ] - [ INFO ]  Mapped "{[/area/toAreaList]}" onto public java.lang.String com.fh.shop.backend.controller.area.AreaController.toAreaList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70394 ] - [ INFO ]  Mapped "{[/area/addAreaInfo]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.area.AreaController.addAreaInfo(com.fh.shop.backend.po.area.Area)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70395 ] - [ INFO ]  Mapped "{[/area/updateAreaInfo]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.area.AreaController.updateAreaInfo(com.fh.shop.backend.po.area.Area)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70396 ] - [ INFO ]  Mapped "{[/area/deleteArea]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.area.AreaController.deleteArea(java.util.List<java.lang.Integer>)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70397 ] - [ INFO ]  Mapped "{[/area/queryAreaList]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.area.AreaController.queryAreaList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70401 ] - [ INFO ]  Mapped "{[/queryBrandList]}" onto public java.lang.String com.fh.shop.backend.controller.brand.BrandController.queryBrandList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70402 ] - [ INFO ]  Mapped "{[/toAddBrand]}" onto public java.lang.String com.fh.shop.backend.controller.brand.BrandController.toAddBrand()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70413 ] - [ INFO ]  Mapped "{[/queryBrand]}" onto public java.util.Map com.fh.shop.backend.controller.brand.BrandController.queryBrand(com.fh.shop.backend.po.brand.Brand,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70414 ] - [ INFO ]  Mapped "{[/updateBrand]}" onto public java.lang.String com.fh.shop.backend.controller.brand.BrandController.updateBrand(com.fh.shop.backend.po.brand.Brand)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70415 ] - [ INFO ]  Mapped "{[/deleteBatchBrand]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fh.shop.backend.controller.brand.BrandController.deleteBatchBrand(java.lang.String,javax.servlet.http.HttpServletResponse)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70416 ] - [ INFO ]  Mapped "{[/queryByBrandId]}" onto public org.springframework.web.servlet.ModelAndView com.fh.shop.backend.controller.brand.BrandController.queryByBrandId(java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70417 ] - [ INFO ]  Mapped "{[/addBrand]}" onto public java.lang.String com.fh.shop.backend.controller.brand.BrandController.addBrand(com.fh.shop.backend.po.brand.Brand)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70419 ] - [ INFO ]  Mapped "{[/deleteBrand]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fh.shop.backend.controller.brand.BrandController.deleteBrand(java.lang.Integer,javax.servlet.http.HttpServletResponse)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70420 ] - [ INFO ]  Mapped "{[/findBrand]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fh.shop.backend.controller.brand.BrandController.findBrand()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70429 ] - [ INFO ]  Mapped "{[/updateToBrand]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.brand2.ToBrandController.updateToBrand(com.fh.shop.backend.po.brand.Brand)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70434 ] - [ INFO ]  Mapped "{[/toBrand]}" onto public java.lang.String com.fh.shop.backend.controller.brand2.ToBrandController.toBrand(com.fh.shop.backend.po.brand.Brand,org.springframework.ui.ModelMap,java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70437 ] - [ INFO ]  Mapped "{[/addBrand2]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.brand2.ToBrandController.addBrand2(com.fh.shop.backend.po.brand.Brand)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70444 ] - [ INFO ]  Mapped "{[/dept/queryDeptList]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.dept.DeptController.queryDeptList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70448 ] - [ INFO ]  Mapped "{[/dept/addDeptInfo]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.dept.DeptController.addDeptInfo(com.fh.shop.backend.po.dept.Dept)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70449 ] - [ INFO ]  Mapped "{[/dept/deleteDpt]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.dept.DeptController.deleteDpt(java.util.List<java.lang.Integer>)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70450 ] - [ INFO ]  Mapped "{[/dept/updateDeptInfo]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.dept.DeptController.updateDeptInfo(com.fh.shop.backend.po.dept.Dept)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70452 ] - [ INFO ]  Mapped "{[/fileInput/addHeadPortrait],methods=[POST]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.fileInput.FileController.addHeadPortrait(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70454 ] - [ INFO ]  Mapped "{[/images/findProductImages]}" onto public java.lang.String com.fh.shop.backend.controller.images.ImagesController.findProductImages(java.lang.Integer,org.springframework.ui.ModelMap)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70456 ] - [ INFO ]  Mapped "{[/toLogList]}" onto public java.lang.String com.fh.shop.backend.controller.log.LogController.toLogList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70457 ] - [ INFO ]  Mapped "{[/queryLog]}" onto public java.util.Map com.fh.shop.backend.controller.log.LogController.queryLog(com.fh.shop.backend.po.log.LogInfo,java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70458 ] - [ INFO ]  Mapped "{[/loginController/login]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.login.LoginController.login(com.fh.shop.backend.po.user.User,javax.servlet.http.HttpServletRequest) throws java.text.ParseException
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70464 ] - [ INFO ]  Mapped "{[/exportExcel]}" onto public void com.fh.shop.backend.controller.product.ProductController.exportExcel(com.fh.shop.backend.po.product.Product,javax.servlet.http.HttpServletResponse)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70465 ] - [ INFO ]  Mapped "{[/toProductList]}" onto public java.lang.String com.fh.shop.backend.controller.product.ProductController.toProductList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70466 ] - [ INFO ]  Mapped "{[/exportExcelByBrand]}" onto public void com.fh.shop.backend.controller.product.ProductController.exportExcelByBrand(com.fh.shop.backend.po.product.Product,javax.servlet.http.HttpServletResponse)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70468 ] - [ INFO ]  Mapped "{[/exportDifferentExcel]}" onto public void com.fh.shop.backend.controller.product.ProductController.exportDifferentExcel(javax.servlet.http.HttpServletResponse)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70469 ] - [ INFO ]  Mapped "{[/toAdd]}" onto public java.lang.String com.fh.shop.backend.controller.product.ProductController.toAdd(org.springframework.ui.ModelMap)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70470 ] - [ INFO ]  Mapped "{[/deleteBatchProduct]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fh.shop.backend.controller.product.ProductController.deleteBatchProduct(java.lang.String)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70471 ] - [ INFO ]  Mapped "{[/queryProduct]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.product.ProductController.queryProduct(com.fh.shop.backend.po.product.Product,java.lang.Integer,java.lang.Integer,java.lang.Integer,javax.servlet.http.HttpServletRequest)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70472 ] - [ INFO ]  Mapped "{[/addProduct]}" onto public java.lang.String com.fh.shop.backend.controller.product.ProductController.addProduct(com.fh.shop.backend.po.product.Product,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.commons.CommonsMultipartFile,org.springframework.web.multipart.MultipartFile[])
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70477 ] - [ INFO ]  Mapped "{[/queryById]}" onto public org.springframework.web.servlet.ModelAndView com.fh.shop.backend.controller.product.ProductController.queryById(java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70478 ] - [ INFO ]  Mapped "{[/deleteProduct]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fh.shop.backend.controller.product.ProductController.deleteProduct(java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70479 ] - [ INFO ]  Mapped "{[/updateProduct]}" onto public java.lang.String com.fh.shop.backend.controller.product.ProductController.updateProduct(com.fh.shop.backend.po.product.Product,javax.servlet.http.HttpServletRequest,org.springframework.web.multipart.MultipartFile,org.springframework.web.multipart.MultipartFile[]) throws java.io.IOException
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70484 ] - [ INFO ]  Mapped "{[/userToIndex]}" onto public java.lang.String com.fh.shop.backend.controller.user.UserController.toIndex()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70485 ] - [ INFO ]  Mapped "{[/toLogin]}" onto public java.lang.String com.fh.shop.backend.controller.user.UserController.toLogin()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70486 ] - [ INFO ]  Mapped "{[/toAddUser]}" onto public java.lang.String com.fh.shop.backend.controller.user.UserController.toAddUser()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70486 ] - [ INFO ]  Mapped "{[/addUser]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.toAddUser(com.fh.shop.backend.po.user.User)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70487 ] - [ INFO ]  Mapped "{[/toUserList]}" onto public java.lang.String com.fh.shop.backend.controller.user.UserController.toUserList()
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70487 ] - [ INFO ]  Mapped "{[/exportExcelByDept]}" onto public void com.fh.shop.backend.controller.user.UserController.exportExcelByDept(javax.servlet.http.HttpServletResponse,java.util.List<java.lang.Integer>)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70488 ] - [ INFO ]  Mapped "{[/findUserById]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.findUserById(java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70489 ] - [ INFO ]  Mapped "{[/updateUserDeptId]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.updateUserDeptId(java.util.List<java.lang.Integer>,java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70490 ] - [ INFO ]  Mapped "{[/updateUser]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.updateUser(com.fh.shop.backend.po.user.User)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70490 ] - [ INFO ]  Mapped "{[/updateUserType]}" onto public java.lang.String com.fh.shop.backend.controller.user.UserController.updateUserType(java.lang.Integer)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70491 ] - [ INFO ]  Mapped "{[/queryUserList]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.queryUserList(com.fh.shop.backend.po.user.User,java.lang.Integer,java.lang.Integer,java.lang.Integer,javax.servlet.http.HttpServletRequest)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70492 ] - [ INFO ]  Mapped "{[/addUserInfo]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.addUserInfo(com.fh.shop.backend.po.user.User)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70493 ] - [ INFO ]  Mapped "{[/deleteUser]}" onto public com.fh.shop.backend.common.ServerResponse com.fh.shop.backend.controller.user.UserController.deleteUser(java.util.List<java.lang.Integer>)
+2019-04-04 12:56:29  [ http-nio-8084-exec-7:70495 ] - [ INFO ]  Mapped "{[/api/findProductApiList]}" onto public java.lang.Object com.fh.shop.backend.api.product.ProductApiController.findProductApiList(java.lang.String)
+2019-04-04 12:56:31  [ http-nio-8084-exec-7:72199 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'fhServlet-servlet': startup date [Thu Apr 04 12:56:20 CST 2019]; parent: Root WebApplicationContext
+2019-04-04 12:56:32  [ http-nio-8084-exec-7:73308 ] - [ INFO ]  Looking for @ControllerAdvice: WebApplicationContext for namespace 'fhServlet-servlet': startup date [Thu Apr 04 12:56:20 CST 2019]; parent: Root WebApplicationContext
+2019-04-04 12:56:33  [ http-nio-8084-exec-7:74691 ] - [ INFO ]  FrameworkServlet 'fhServlet': initialization completed in 13205 ms
+2019-04-04 12:56:34  [ http-nio-8084-exec-7:75522 ] - [ INFO ]  进入com.fh.shop.backend.controller.login.LoginController的login()
+2019-04-04 12:56:35  [ http-nio-8084-exec-7:76078 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.findSaltByName]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2019-04-04 12:56:38  [ http-nio-8084-exec-7:79025 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 12:56:38  [ http-nio-8084-exec-7:79119 ] - [ DEBUG ]  Setting JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] read-only
+2019-04-04 12:56:38  [ http-nio-8084-exec-7:79121 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 12:56:38  [ http-nio-8084-exec-7:79366 ] - [ DEBUG ]  ==>  Preparing: select salt from t_user where username=?; 
+2019-04-04 12:56:38  [ http-nio-8084-exec-7:79531 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79855 ] - [ DEBUG ]  <==      Total: 1
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79858 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79860 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79903 ] - [ DEBUG ]  Resetting read-only flag of JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79905 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:79906 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80192 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.findUserByUserName]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80203 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80206 ] - [ DEBUG ]  Setting JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] read-only
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80211 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80214 ] - [ DEBUG ]  ==>  Preparing: select * from t_user where username=?; 
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80216 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80310 ] - [ DEBUG ]  <==      Total: 1
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80312 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80317 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80320 ] - [ DEBUG ]  Resetting read-only flag of JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80322 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80323 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80394 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.updateErrorCount]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80397 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80401 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80406 ] - [ DEBUG ]  ==>  Preparing: update t_user set errorCount=0 where username=?; 
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80407 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80419 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80420 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80423 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80429 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80430 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80432 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.updateUserInfo]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80441 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80453 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80460 ] - [ DEBUG ]  ==>  Preparing: update t_user set firstLoginTime=?,lastLoginTime=?,loginCount=? where username=?; 
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80462 ] - [ DEBUG ]  ==> Parameters: 2019-04-04 00:01:54.0(Timestamp), 2019-04-04 12:56:39.594(Timestamp), 2(Integer), aa(String)
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80522 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80523 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80525 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80641 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80642 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80668 ] - [ INFO ]  aa执行com.fh.shop.backend.controller.login.LoginController的login()成功
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80669 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.log.ILogServiceImpl.addLog]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80672 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80674 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80689 ] - [ DEBUG ]  ==>  Preparing: insert into t_log (userName,logInfo,createTime,excuteTime,status,content) values (?,?,SYSDATE(),?,?,?); 
+2019-04-04 12:56:39  [ http-nio-8084-exec-7:80691 ] - [ DEBUG ]  ==> Parameters: aa(String), 执行com.fh.shop.backend.controller.login.LoginController的login()成功(String), 5145(Integer), 1(Integer), 登录成功(String)
+2019-04-04 12:56:40  [ http-nio-8084-exec-7:80806 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 12:56:40  [ http-nio-8084-exec-7:80807 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 12:56:40  [ http-nio-8084-exec-7:80816 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 12:56:40  [ http-nio-8084-exec-7:80859 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 12:56:40  [ http-nio-8084-exec-7:80860 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231770 ] - [ INFO ]  进入com.fh.shop.backend.controller.login.LoginController的login()
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231773 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.findSaltByName]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231850 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231879 ] - [ DEBUG ]  Setting JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] read-only
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231882 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231903 ] - [ DEBUG ]  ==>  Preparing: select salt from t_user where username=?; 
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231905 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231990 ] - [ DEBUG ]  <==      Total: 1
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2231991 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2232045 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2232138 ] - [ DEBUG ]  Resetting read-only flag of JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2232222 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:32:31  [ http-nio-8084-exec-9:2232223 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306065 ] - [ INFO ]  进入com.fh.shop.backend.controller.login.LoginController的login()
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306066 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.findSaltByName]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306110 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306160 ] - [ DEBUG ]  Setting JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] read-only
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306224 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306288 ] - [ DEBUG ]  ==>  Preparing: select salt from t_user where username=?; 
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306289 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306340 ] - [ DEBUG ]  <==      Total: 1
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306342 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306405 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306485 ] - [ DEBUG ]  Resetting read-only flag of JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306506 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306507 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306508 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.findUserByUserName]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306555 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306596 ] - [ DEBUG ]  Setting JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] read-only
+2019-04-04 13:33:45  [ http-nio-8084-exec-1:2306704 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306790 ] - [ DEBUG ]  ==>  Preparing: select * from t_user where username=?; 
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306792 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306859 ] - [ DEBUG ]  <==      Total: 1
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306860 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306891 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2306964 ] - [ DEBUG ]  Resetting read-only flag of JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307049 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307050 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307051 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.updateErrorCount]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307053 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307055 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307056 ] - [ DEBUG ]  ==>  Preparing: update t_user set errorCount=0 where username=?; 
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307058 ] - [ DEBUG ]  ==> Parameters: aa(String)
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307060 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307061 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307069 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307073 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307073 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307074 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.login.LoginServiceImpl.updateUserInfo]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307076 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307092 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307221 ] - [ DEBUG ]  ==>  Preparing: update t_user set firstLoginTime=?,lastLoginTime=?,loginCount=? where username=?; 
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307223 ] - [ DEBUG ]  ==> Parameters: 2019-04-04 12:56:39.0(Timestamp), 2019-04-04 13:33:46.321(Timestamp), 3(Integer), aa(String)
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307316 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307317 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307354 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307579 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307580 ] - [ DEBUG ]  Returning JDBC Connection to DataSource
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307581 ] - [ INFO ]  aa执行com.fh.shop.backend.controller.login.LoginController的login()成功
+2019-04-04 13:33:46  [ http-nio-8084-exec-1:2307581 ] - [ DEBUG ]  Creating new transaction with name [com.fh.shop.backend.biz.log.ILogServiceImpl.addLog]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,-Exception
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2307751 ] - [ DEBUG ]  Acquired Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] for JDBC transaction
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308077 ] - [ DEBUG ]  Switching JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] to manual commit
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308079 ] - [ DEBUG ]  ==>  Preparing: insert into t_log (userName,logInfo,createTime,excuteTime,status,content) values (?,?,SYSDATE(),?,?,?); 
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308083 ] - [ DEBUG ]  ==> Parameters: aa(String), 执行com.fh.shop.backend.controller.login.LoginController的login()成功(String), 1515(Integer), 1(Integer), 登录成功(String)
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308178 ] - [ DEBUG ]  <==    Updates: 1
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308179 ] - [ DEBUG ]  Initiating transaction commit
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308197 ] - [ DEBUG ]  Committing JDBC transaction on Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java]
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308358 ] - [ DEBUG ]  Releasing JDBC Connection [jdbc:mysql://localhost:3306/fh_shop?useUnicode=true&characterEncoding=UTF-8, UserName=root@localhost, MySQL Connector Java] after transaction
+2019-04-04 13:33:47  [ http-nio-8084-exec-1:2308359 ] - [ DEBUG ]  Returning JDBC Connection to DataSource

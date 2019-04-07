@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.brand2.IToBrandMapper" >
+	<sql id="brandWhere">
+		<where>
+			<if test="brandName != null and brandName != ''">
+				brandName like concat('%',#{brandName},'%')
+			</if>
+			<if test="minCreateTime != null">
+				and createTime >= #{minCreateTime}
+			</if>
+			<if test="maxCreateTime != null">
+				and createTime &lt;=#{maxCreateTime}
+			</if>
+			<if test="minUpdateTime != null">
+				and updateTime >= #{minUpdateTime}
+			</if>
+			<if test="maxUpdateTime != null">
+				and updateTime >= #{maxUpdateTime}
+			</if>
+		</where>
+	</sql>
+
+	<select id="toBrand" parameterType="brand" resultType="brand">
+		select id,brandName,createTime,updateTime from t_brand 
+		<include refid="brandWhere"></include> 
+		order by id asc;
+	</select>
+	
+	<insert id="addBrand2" parameterType="brand">
+		insert into t_brand (brandName,createTime) values (#{brandName},SYSDATE());
+	</insert>
+	
+	<update id="updateToBrand" parameterType="brand">
+		update t_brand set brandName=#{brandName},updateTime=SYSDATE() where id=#{id};
+	</update>
+</mapper>

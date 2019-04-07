@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.area.IAreaMapper" >
+
+	<select id="queryAreaList" resultType="area">
+		select id,name,pId,remark from t_area;
+	</select>
+
+	<insert id="addAreaInfo" parameterType="area">
+		<!--使用<selectKey>可以使mybatis的添加成功后自动有特定属性的返回值-->
+		<selectKey resultType="int" keyProperty="id" order="AFTER">
+			select last_insert_id();
+		</selectKey>
+		insert into t_area (name,pId,remark) values (#{name},#{pId},#{remark});
+	</insert>
+
+	<update id="updateAreaInfo" parameterType="area">
+		update t_area set name=#{name},remark=#{remark} where id=#{id};
+	</update>
+
+	<delete id="deleteArea">
+		delete from t_area where id in
+		<foreach collection="list" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

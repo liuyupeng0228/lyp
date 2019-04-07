@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fh.shop.backend.mapper.brand.IBrandMapper" >
+
+	<!-- id是唯一标识符，下面SQL语句中的resultMap跟的值要与resultMap标签中的id值一致才可使用 -->
+	<!-- type跟的是实体类的类全称或是别名 -->
+	<!-- column跟的是数据库表字段，property跟的是实体类的属性，要一一对应 -->
+	<resultMap id="brandList" type="brand">
+		<result column="id" property="id"></result>
+		<result column="brandName" property="brandName"></result>
+	</resultMap>
+	
+	<!-- 所有的条件查询的条件都放入<where>标签的<if>标签中，每一个条件都有一个<if>标签 -->
+	<!-- <sql>标签中的id自定义，<include>标签中的refid跟的值要与id中的一致 -->
+	<sql id="brandWhere">
+		<where>
+			<if test="brandName != null and brandName != ''">
+				brandName like concat('%',#{brandName},'%')
+			</if>
+			<if test="minCreateTime != null">
+				and createTime >= #{minCreateTime}
+			</if>
+			<if test="maxCreateTime != null">
+				and createTime &lt;=#{maxCreateTime}
+			</if>
+			<if test="minUpdateTime != null">
+				and updateTime >= #{minUpdateTime}
+			</if>
+			<if test="maxUpdateTime != null">
+				and updateTime >= #{maxUpdateTime}
+			</if>
+		</where>
+	</sql>
+	
+	<!-- 查询总条数 -->
+	<select id="queryCount" parameterType="brand" resultType="long">
+		select count(*) from t_brand
+		<include refid="brandWhere"></include>
+	</select>
+	<!-- 分页条件查询 -->
+	<select id="queryBrand" parameterType="brand" resultMap="brandList">
+		select t.* from 
+			(select id,brandName,createTime,updateTime from t_brand 
+			<include refid="brandWhere"></include> 
+			order by id desc) t 
+				limit #{startPos},#{pageSize}
+	</select>
+
+
+
+
+	<insert id="addBrand" parameterType="brand">
+		insert into t_brand (brandName,createTime) values (#{brandName},SYSDATE());
+	</insert>
+	
+	<!-- 单个删除 -->
+	<delete id="deleteBrand" parameterType="int">
+		delete from t_brand where id=#{id};
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteBatchBrand">
+		delete from t_brand where id in
+			<foreach collection="list" item="id" open="(" close=")" separator=",">
+				#{id}
+			</foreach>
+	</delete>
+	
+	
+	
+	
+	<select id="queryByBrandId" parameterType="int" resultType="brand">
+		select id,brandName from t_brand where id=#{id};
+	</select>
+	
+	<update id="updateBrand" parameterType="brand">
+		update t_brand set brandName=#{brandName},updateTime=SYSDATE() where id=#{id};
+	</update>
+	
+	
+	<select id="findBrand" resultType="brand">
+		select * from t_brand 
+	</select>
+</mapper>

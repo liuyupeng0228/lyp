@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>shop-admin-new</display-name>
+  <!-- 通过ContextLoaderListener去加载spring的配置文件 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <!-- 扫描scource类型文件下的文件（不包含scource文件） -->
+    <param-value>
+      classpath:spring/spring-common.xml
+    </param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+
+  <!-- 处理中文乱码 -->
+  <filter>
+    <filter-name>fhFilter</filter-name>
+    <filter-class>
+      org.springframework.web.filter.CharacterEncodingFilter
+    </filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <description>
+    </description>
+    <display-name>WebContextFilter</display-name>
+    <filter-name>WebContextFilter</filter-name>
+    <filter-class>com.fh.shop.backend.common.WebContextFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>fhFilter</filter-name>
+    <!-- 访问路径的后缀，在地址栏上访问时要加上 -->
+    <url-pattern>*.jhtml</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>WebContextFilter</filter-name>
+    <url-pattern>/WebContextFilter</url-pattern>
+  </filter-mapping>
+
+
+  <servlet>
+    <servlet-name>fhServlet</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        classpath:spring/spring-mvc-controller.xml
+      </param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fhServlet</servlet-name>
+    <!-- 访问路径的后缀，在地址栏上访问时要加上 -->
+    <url-pattern>*.jhtml</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- 配置log4j -->
+  <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>shop-admin-maven-v2.manager</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jRefreshInterval</param-name>
+    <param-value>3000</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+
+
+  <!-- ThreadLocal和filter的配置文件 -->
+  <!--对有指定后缀名的方发进行拦截-->
+  <filter>
+    <filter-name>webContextFilter</filter-name>
+    <filter-class>com.fh.shop.backend.common.WebContextFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>webContextFilter</filter-name>
+    <url-pattern>*.jhtml</url-pattern>
+  </filter-mapping>
+
+
+  <!--验证码的配置-->
+  <servlet>
+    <servlet-name>imgcode</servlet-name>
+    <servlet-class>com.fh.shop.backend.servlet.ImageCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>imgcode</servlet-name>
+    <url-pattern>/imgcode</url-pattern>
+  </servlet-mapping>
+
+
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
